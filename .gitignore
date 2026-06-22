@@ -1,8 +1,15 @@
-# Hugo
-/public/
-/resources/_gen/
-
-# Mac File System File...utterly useless to anyone but me.
+# OS files
 .DS_Store
+Thumbs.db
 
-/node_modules
+# VM delegation per-user credentials
+/secrets/
+
+# agent stuff
+.c2o/
+CLAUDE.md
+
+# Design-project source exports (not part of the published site; live under site/assets/)
+/assets/
+/screenshots/
+/uploads/
