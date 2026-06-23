@@ -22,6 +22,29 @@
     });
   });
 
+  /* 1b. Hero aurora — rotate the logo-colored gradient as the visitor scrolls */
+  (function () {
+    var hero = document.querySelector('[data-hero] .hero__aurora');
+    if (!hero) { return; }
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+
+    var ROT_PER_PX = 0.12;   // degrees of rotation per pixel scrolled
+    var MAX_ROT = 140;       // stop spinning once we're well past the hero
+    var ticking = false;
+
+    function update() {
+      var deg = Math.min(window.pageYOffset * ROT_PER_PX, MAX_ROT);
+      hero.style.setProperty('--hero-rot', deg.toFixed(2) + 'deg');
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  })();
+
   /* 2. Copy-to-clipboard --------------------------------------------------- */
   Array.prototype.forEach.call(document.querySelectorAll('.cmd__copy'), function (btn) {
     btn.addEventListener('click', function () {

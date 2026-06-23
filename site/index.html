@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Auto Dark Mode — Light by day, dark by night, on its own</title>
   <meta name="description" content="Switches between the dark and light theme of Windows at scheduled times. Compatible with Windows 10 and Windows 11." />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/logo-color.png" type="image/png" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Apply the saved theme before the page paints, so there is no flash. -->
@@ -25,7 +25,7 @@
   <header class="header">
     <div class="wrap header__inner">
       <a class="brand" href="#top">
-        <span class="brand__mark"></span>
+        <span class="brand__mark brand__mark--color"></span>
         <span class="brand__name">Auto Dark Mode</span>
       </a>
       <div class="header__right">
@@ -54,7 +54,15 @@
   <span id="top"></span>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero">
+  <section class="hero" data-hero>
+    <!-- Playful, logo-colored aurora. Rotates as the visitor scrolls. -->
+    <div class="hero__aurora" aria-hidden="true">
+      <span class="hero__blob hero__blob--1"></span>
+      <span class="hero__blob hero__blob--2"></span>
+      <span class="hero__blob hero__blob--3"></span>
+      <span class="hero__blob hero__blob--4"></span>
+      <span class="hero__blob hero__blob--5"></span>
+    </div>
     <div class="wrap hero__inner">
       <p class="eyebrow">Runs on Windows 10 &amp; 11</p>
       <h1 class="hero__title">Your screen knows when the sun goes down.</h1>
@@ -260,7 +268,7 @@
       <div class="footer__top">
         <div class="footer__brand">
           <div class="brand">
-            <span class="brand__mark"></span>
+            <span class="brand__mark brand__mark--color"></span>
             <span class="brand__name">Auto Dark Mode</span>
           </div>
           <p>Switches between the dark and light theme of Windows at scheduled times.</p>
